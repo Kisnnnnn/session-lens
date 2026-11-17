@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "session-lens",
+  "version": "0.6.0",
+  "description": "本地会话透镜：解析并标记疑似卡顿任务，由DeepSeek规划、Codex子agent执行代码与验证，支持跨应用接续。",
+  "author": {
+    "name": "Local tools"
+  },
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "会话透镜 · Session Lens",
+        "shortDescription": "解析卡顿线索，DP规划，Codex子agent执行与验证。",
+        "longDescription": "读取本地会话并持久标记排查阶段。用户主动将有界材料交给DeepSeek规划，再由Codex宿主实际领取执行包、分波调用子agent处理代码与验证，回写进度与汇总。保留外置分析、可视分发和跨应用接续。监测和本地解析不调用模型；DP规划和Codex执行分别消耗额度。不保证并行可缓解服务容量拥堵。",
+        "developerName": "Local tools",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive",
+          "Read",
+          "Write"
+        ],
+        "brandColor": "#087F68",
+        "defaultPrompt": [
+          "打开会话透镜，看看当前工作区的上下文和等待状态。",
+          "查看子 agent 状态，并为选定会话导出续接材料。",
+          "为选定的已结束会话生成 AI 交接摘要，并创建新聊天继续。",
+          "查看外置大脑设置，用已配置的外部模型分析我提供的问题。",
+          "为已结束的会话准备跨应用交接材料，在 Cursor、Claude Code 或 Trae 继续。",
+          "打开外置大脑子任务分发，为目标准备可编辑清单并查看分发预算。",
+          "解析并标记选中疑似卡顿任务，让DeepSeek规划剩余工作，再准备Codex子agent执行包。"
+        ]
+      }
+    }
+  }
+}

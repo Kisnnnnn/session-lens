@@ -1,0 +1,12 @@
+{
+  "name": "session-lens-local",
+  "interface": { "displayName": "本地会话工具" },
+  "plugins": [
+    {
+      "name": "session-lens",
+      "source": { "source": "local", "path": "./plugin" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

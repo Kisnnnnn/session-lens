@@ -1,0 +1,30 @@
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+
+# Local credentials and runtime data
+.env
+.env.*
+!.env.example
+api-key.json
+*-credentials.json
+runtime.json
+config.local.json
+external-brain/
+rescues/
+transfers/
+agent-notes.json
+*.sqlite
+*.sqlite-*
+*.db
+*.jsonl
+*.log
+*.zip
